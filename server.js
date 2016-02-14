@@ -5,10 +5,16 @@ var mongoose = require('mongoose');
 var multer = require('multer');
 var routes = require('./app/routes/index.js');
 
+var mongoUrl = process.env.MONGOLAB_URI;
+
 var app = express();
+
+mongoose.connect(mongoUrl);
 
 routes(app);
 
-app.listen(5000, function (err){
-	console.log('listening to port 5000...');
+var port = process.env.PORT || 5000;
+
+app.listen(port, function (err){
+	console.log('listening to port ' + port+ '...');
 });
