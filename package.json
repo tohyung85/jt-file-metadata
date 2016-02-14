@@ -1,0 +1,25 @@
+{
+  "name": "jt-file-metadata",
+  "version": "1.0.0",
+  "description": "Uploading and retrieve file metadata",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "upload",
+    "metadata",
+    "file"
+  ],
+  "author": "Joshua Tan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.3",
+    "multer": "^1.1.0"
+  },
+  "engines": {
+    "node": "5.5.0"
+  }
+
+}
