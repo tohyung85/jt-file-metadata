@@ -3,6 +3,9 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var multer = require('multer');
+var upload = multer({
+	dest: process.cwd() + '/public/uploads',
+});
 var routes = require('./app/routes/index.js');
 
 var mongoUrl = process.env.MONGOLAB_URI;

@@ -6,14 +6,20 @@ function fileUploadHandler (app) {
 
 	this.uploadFile = function (req, res) {
 		var newFile = new File();
-		newFile.fileName = 'testFilename';
+		newFile.fileName = req.file.originalname;
 		newFile.when = new Date();
 
 		newFile.save(function(err){
-
 			if (err) {throw err; }
 
-			res.send('file saved');
+			if (req.file) {
+				console.log('upload success');
+				res.json(req.file);	
+			} else {
+				console.log('upload fail');
+				res.json('upload fail');
+			}
+			
 		});
 	}
 
